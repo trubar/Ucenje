@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vaja2Test</title>
+    <style media="screen" type="text/css">
+    .menu {
+    margin:0px;
+    padding:0px;
+    font-family: "Times New Roman";
+    font-size:14px;
+    font-weight:bold;
+    color:#6D6D6D;
+    }
+    .menu ul {
+      height:26px;
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    .menu li {
+      float:left;
+      padding:0px;
+    }
+    .menu li a {
+      color:#6D6D6D;
+      display:block;
+      font-weight:normal;
+      line-height:26px;
+      margin:0px;
+      padding:0px 25px;
+      text-align:center;
+      text-decoration:none;
+    }
+    .menu li a:hover, .menu ul li:hover a {
+      background: #ca9875 url("menu_images/hover.gif") bottom center no-repeat;
+      color:#6D6D6D;
+      text-decoration:none;
+    }
+    .menu li ul{
+      /*background:#333333;*/
+      /*background: #B32267;*/
+      background: white;
+      display:none;
+      height:auto;
+      padding:0px;
+      margin:0px;
+      border:0px;
+      position:absolute;
+      /*width: 225px;*/
+      width:135px;
+      z-index:200;
+      /*top:1em;
+      /*left:0;*/
+    }
+    .menu li:hover ul{
+      display:block;
+    }
+    .menu li li {
+      background:url('menu_images/sub_sep.gif') bottom left no-repeat;
+      display:block;
+      float:none;
+      margin:0px;
+      padding:0px;
+      /*width: 225px;*/
+      width:135px;
+    }
+.menu li:hover li a{
+  background:none;
+
+  }
+.menu li ul a{
+  display:block;
+  height:26px;
+  font-size:13px;
+  font-style:normal;
+  margin:0px;
+  padding:0px 10px 0px 15px;
+  text-align:left;
+  }
+  .menu li ul a:hover, .menu li ul li:hover a{
+background:#ca9875 url('menu_images/hover_sub.gif') center left no-repeat;
+      border:0px;
+      color:#ffffff;
+      text-decoration:none;
+      }
+.menu p{
+  clear:left;
+  }
+  /* dodano za 2 meni */
+.menu ul li ul li { position: relative; }
+.menu ul li ul li ul, .menu ul li:hover ul li ul { display: none; }
+.menu ul li ul li:hover ul {
+  display: block;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.menu ul li ul li:hover ul li a { background: none; color: #6d6d6d; }
+.menu ul li ul li:hover ul li a:hover { background:#ca9875 url('menu_images/hover_sub.gif') center left no-repeat; color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="index.php" target="_self" >Home</a></li>
+        <li><a href="preparation.php" target="_self" >Gallery</a>
+        <ul>
+          <li><a href="digital.php" target="_self">Storybooks</a>
+             <ul>
+                 <li><a href="digital1.php" target="_self">Storybook 1</a></li>
+                 <li><a href="digital2.php" target="_self">Storybook 2</a></li>
+              </ul>
+          </li>
+        <li><a href="preparation.php" target="_self">Preparation</a></li>
+        <li><a href="ceremony.php" target="_self">Ceremony</a></li>
+        <li><a href="private.php" target="_self">Personal Shooting</a></li>
+        <li><a href="firstdance.php" target="_self">First Dance</a></li>
+        <li><a href="details.php" target="_self">Details</a></li>
+        </ul>
+        </li>
+        <li><a href="login.php" target="_self" >Customers</a>
+        </li>
+        <li><a href="about.php" target="_self" >About</a>
+        </li>
+        <li><a href="contact.php" target="_self" >Contact</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

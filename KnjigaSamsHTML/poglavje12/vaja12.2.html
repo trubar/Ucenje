@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vaja12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+            form div {
+            margin-bottom: 1em;
+            }
+            div.submit input {
+            margin-left: 165px;
+            }
+            label.field {
+            display: block;
+            float: left;
+            margin-right: 15px;
+            width: 150px;
+            text-align: right;
+            }
+            label.required {
+            font-weight: bold;
+            }
+            </style>
+</head>
+<body>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+        <p>Prosimo izpolnite spodnji obrazec za registracijo. Polja ki so označena so obvezna</p>
+        <h1>Registracijski obrazec</h1>
+        <div>
+            <label class="required field" for="ime">Ime: </label>
+            <input id="name">
+        </div>
+        <div>
+            <label class="required field">Spol: </label>
+            <label><input type="radio" name="Spol" value="zenski">Ženski</label>
+            <label><input type="radio" name="Spol" value="moski">Moški</label>
+        </div>
+        <div>
+            <label class="required field">Operacijski sistem: </label>
+            <select id="os">
+                <option value="windows">Windows</option>
+                <option value="mac">Mac</option>
+                <option value="linux">Linux</option>
+                <option value="Ostalo">Ostalo</option>
+            </select>
+        </div>
+        <div>
+            <label class="field">Igrače</label>
+            <label><input type="checkbox" name="toy" value="digicam"> Digitalne kamere</label>
+            <label><input type="checkbox" name="toy" value="phone"> Mobilni telefoni</label>
+            <label><input type="checkbox" name="toy" value="tablet"> Tablice</label>
+        </div>
+        <div>
+            <label for="portrail" class="field">Slika: </label>
+            <input type="file" id="portrail">
+        </div>
+        <div>
+            <label for="bio" class="field">Mini opis: </label>
+            <textarea id="bio" cols="40" rows="6"></textarea>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Roboto');
+html body {
+    font-family: PT Sans Narrow, Roboto, sans-serif;
+    text-align: center;
+    min-width:400px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    font-size: 1.8em;
+    border-bottom: 1px solid black;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-right: 1px solid black;
+    height: 100%;
+}
+#main-doc {
+    position: absolute;
+    margin-left: 310px;
+    padding: 20px;
+}
+#main-doc header {
+    text-align: left;
+    border: none;
+    margin: 8px;
+    color: tan;
+}
+#navbar ul {
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#navbar li {
+    text-align: left;
+    padding-left: 45px;
+    border-bottom: 1px solid black;
+    list-style: none;
+    padding: 8px;
+}
+#navbar a {
+    text-decoration: none;
+}
+article {
+    text-align: left;
+    margin: 15px;
+}
+p {
+    margin: 16px;
+}
+img {
+    width: 70%;
+}
+code {
+    display: block;
+    text-align: left;
+    white-space: pre;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #f7f7f7;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+section li {
+    margin: 15px 0px 0px 20px;
+}
+section h2 {
+    margin-bottom: 15px;
+    color: dimgrey;
+}
+@media (max-width: 815px) {
+    #main-doc {
+        position: relative;
+        margin: 10px;
+        top: 0;
+        margin-top: 275px;
+    }
+    code {
+        margin-left:-20px;
+        width:100%;
+        padding:15px;
+        padding-left:10px;
+        padding-right:45px;
+        min-width:233px;
+    }
+    #navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid black;
+        max-height: 275px;
+        border: none;
+    }
+    #navbar ul {
+        height: 207px;
+    }
+    #navbar li {
+        text-align: center;
+    }
+    
+}

@@ -1,0 +1,35 @@
+@media only screen and (max-device-width: 480px) {
+    #guarantee {
+        margin-right: 30px;
+    }
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    line-height: 1.6em; /* 1,6 * velikost fonta */
+
+}
+h1, h2 {
+    color: #007e7e;
+}
+h1 {
+    font-size: 150%;
+}
+h2 {
+    font-size: 130%;
+}
+#guarantee {
+    background-color: #a7cece;
+    border: 1px dashed white;
+    padding: 25px;
+    padding-left: 80px;
+    margin: 30px;
+    margin-right: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #444;
+    font-style: italic;
+    line-height: 1.9em;
+    background-image: url(../lounge/images/background.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+}

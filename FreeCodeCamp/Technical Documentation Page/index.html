@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dokumentacija</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <div id="page-wrapper">
+        <nav id="navbar">
+            <header>CSS Dokumentacija</header>
+            <ul>
+                <a class="nav-link" href="#CSS_Introduction"><li>CSS Introduction</li></a>
+                <a class="nav-link" href="#CSS_Syntax_and_Selectors"><li>CSS Syntax and Selectors</li></a>
+                <a class="nav-link" href="#CSS_How_To"><li>CSS How To</li></a>
+                <a class="nav-link" href="#CSS_Colors"><li>CSS Colors</li></a>
+                <a class="nav-link" href="#CSS_Backgrounds"><li>CSS Backgrounds</li></a>
+                <a class="nav-link" href="#CSS_Borders"><li>CSS Borders</li></a>
+                <a class="nav-link" href="#CSS_Margins"><li>CSS Margins</li></a>
+                <a class="nav-link" href="#CSS_Padding"><li>CSS Padding</li></a>
+                <a class="nav-link" href="#CSS_Height_and_Width"><li>CSS Height and Width</li></a>
+                <a class="nav-link" href="#CSS_Box_Model"><li>CSS Box Model</li></a>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="CSS_Introduction">
+                <header>CSS Introduction</header>
+                <article>
+                    <p>What is CSS?</p>
+                    <li>CSS stands for Cascading Style Sheets</li>
+                    <li>CSS describes how HTML elements are to be displayed on screen, paper, or in other media</li>
+                    <li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+                    <li>External stylesheets are stored in CSS files</li>
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Syntax_and_Selectors">
+                <header>CSS Syntax and Selectors</header>
+                <article>
+                    <h2>CSS Syntax</h2>
+                    <img src="https://www.w3schools.com/css/selector.gif" alt="CSS Selector">
+                    <p>The selector points to the HTML element you want to style.</p>
+                    <p>The declaration block contains one or more declarations separated by semicolons.</p>
+                    <p>Each declaration includes a CSS property name and a value, separated by a colon.</p>
+                    <p>A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.</p>
+                    <p>In the following example all <p> elements will be center-aligned, with a red text color:</p>
+                    <code>
+                        p {
+                            color: red;
+                            text-align: center;
+                        }
+                    </code>
+                    <h2>CSS Selectors</h2>
+                    <p>CSS selectors are used to "find" (or select) HTML elements based on their element name, id, class, attribute, and more.</p>
+                    <h2>The element Selector</h2>
+                    <p>The element selector selects elements based on the element name.</p>
+                    <p>You can select all &ltp> elements on a page like this ( in this case, all &ltp> elements will be center-aligned, with a red text color ):</p>
+                    <code>
+                        p {
+                            text-align: center;
+                            color: red;
+                        }
+                    </code>
+                    <h2>The id Selector</h2>
+                    <p>The id selector uses the id attribute of an HTML element to select a specific element.</p>
+                    <p>The id of an element should be unique within a page, so the id selector is used to select one unique element!</p>
+                    <p>To select an element with a specific id, write a hash (#) character, followed by the id of the element.</p>
+                    <p>The style rule below will be applied to the HTML element with id="para1":</p>
+                    <code>
+                        #para1 {
+                            text-align: center;
+                            color: red;
+                        }                     
+                    </code>
+                </article>
+            </section>
+            <section class="main-section" id="CSS_How_To">
+                <header>CSS How To</header>
+                <article>
+                    <h2>CSS How To...</h2>
+                    <p>When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.</p>
+                    <h2>Three Ways to Insert CSS</h2>
+                    <p>here are three ways of inserting a style sheet:</p>
+                    <li>External style sheet</li>
+                    <li>Internal style sheet</li>
+                    <li>Inline style</li>
+                    <h2>External Style Sheet</h2>
+                    <p>With an external style sheet, you can change the look of an entire website by changing just one file!</p>
+                    <p>Each page must include a reference to the external style sheet file inside the &ltlink> element. The &ltlink> element goes inside the &lthead> section:</p>
+                    <code>
+                        &lthead>
+                            &ltlink rel="stylesheet" type="text/css" href="mystyle.css">
+                        &lt/head>
+                    </code>
+                    <p>An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension.</p>
+                    <p>Here is how the "mystyle.css" looks:</p>
+                    <code>
+                        body {
+                            background-color: lightblue;
+                        }
+                        
+                        h1 {
+                            color: navy;
+                            margin-left: 20px;
+                        }
+                    </code>
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Colors">
+                <header>CSS Colors</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Backgrounds">
+                <header>CSS Backgrounds</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Borders">
+                <header>CSS Borders</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Margins">
+                <header>CSS Margins</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Padding">
+                <header>CSS Padding</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Height_and_Width">
+                <header>CSS Height and Width</header>
+                <article>
+
+                </article>
+            </section>
+            <section class="main-section" id="CSS_Box_Model">
+                <header>CSS Box Model</header>
+                <article>
+
+                </article>
+            </section>
+        </main>
+
+
+
+
+
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

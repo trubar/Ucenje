@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obrazec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</head>
+<body>
+    <h1 id="title">Obrazec</h1>
+    <div id="obrazec-zunaj">
+        <p id="description">Obrazec za vlogo device</p>
+        <form action="" id="survey-form">
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="ime" class="labels" id="name-label">* Ime:</label>
+                </div>
+                <div class="vnosi">
+                    <input type="text" name="ime" class="input-field" id="name" placeholder="Vpišite ime" required>
+                </div>
+            </div>
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="eposta" class="labels" id="email-label">* Epošta:</label>
+                </div>
+                <div class="vnosi">
+                    <input type="email" name="eposta" class="input-field" id="email" placeholder="Vpišite E-pošto" required>
+                </div>
+            </div>
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="stevilo" class="labels" class="input-field" id="number-label">* Koliko krat mesečno:</label>
+                </div>
+                <dir class="vnosi">
+                    <input type="number" name="stevilo" class="input-field" id="number" min="0" max="31" placeholder="Mesečnih zadovoljitev" required>
+                </dir>
+            </div>
+            <div class="vrstica" id="srednjiDel">
+                <div class="oznake">
+                    <label for="polozaj" class="labels" id="dropdown_lbl">Kateri položaj vas najbolj opisuje:</label>
+                </div>
+                <div class="vnosi">
+                    <select name="polozaj" class"dropdown" id="dropdown">
+                        <option selected disabled value>Izberi možnost</option>
+                        <option value="misionarski">Misionarski</option>
+                        <option value="odZadaj">Od zadaj</option>
+                        <option value="zgoraj">Zgoraj</option>
+                    </select>
+                </div>
+            </div>
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="izbire" class"labels" id="radio_1">Kakšen se vam zdi vaš partner:</label>
+                </div>
+                <div class="vnosi">
+                    <ul id="radio_moski">
+                        <li class="chk_radio"><input type="radio" name="lestvica" class="ckh_val" value="Slab">Slab</li>
+                        <li class="chk_radio"><input type="radio" name="lestvica" class="ckh_val" value="OK">OK</li>
+                        <li class="chk_radio"><input type="radio" name="lestvica" class="ckh_val" value="Super">Super</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="kajIzboljsati" class="labels">Kaj bi bilo potrebno izboljšati za več akcije?<br>Izberi več možnosti:</label>
+                </div>
+                <div class="vnosi">
+                    <ul>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal1">Floro in Fauno</label></li>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal2">Več spanja</label></li>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal3">Pogovor</label></li>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal4">Več romance</label></li>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal5">Nobel večerja</label></li>
+                        <li class="chk_radio"><label><input type="checkbox" name="izb" class="ckh_val" value="chkVal6">Popoldanski tek</label></li>
+                    </ul>   
+                </div>
+            </div>
+            <div class="vrstica">
+                <div class="oznake">
+                    <label for="komentar" class="labels">Komentarji ali predlogi?</label>
+                </div>
+                <div class="vnosi">
+                    <textarea name="komentar" id="komentar" class="input-field" placeholder="Napišite tukaj..."></textarea>
+                </div>
+            </div>
+            <button id="submit" type="submit">Oddaj</button>
+        </form>
+    </div>
+</body>
+</html>

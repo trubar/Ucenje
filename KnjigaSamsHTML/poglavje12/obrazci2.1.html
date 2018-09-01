@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obrazci</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        progress {
+         -webkit-appearance: none;
+         -moz-appearance: none;
+        }
+        /* Chrome and Safari */
+        progress::-webkit-progress-bar {
+        height: 10px;
+        background: #dfdfdf;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+        border-radius: 5px;
+        }
+        progress {
+        height: 12px;
+        background: #dfdfdf;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+        border-radius: 5px;
+        }
+        /* Mozilla Firefox */
+        progress::-webkit-progress-value {
+        background-color: #026105;
+        border-radius: 5px;
+        }
+        progress::-moz-progress-bar {
+        background-color: #026105;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>Progress task 1:
+    <progress id="prog1" value="0" max="100">0%</progress>
+    </p>
+    <p>Progress task 2:
+    <progress id="prog2" value="45" max="100">45%</progress>
+    </p>
+    <p>Progress task 3:
+    <progress id="prog3" value="98" max="100">98%</progress>
+    </p>
+    <p>
+        <progress id="prrog1" value="0.5">0%</progress>
+    </p>
+</body>
+</html>

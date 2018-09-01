@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Navigacijski meni</title>
+    <style type="text/css">
+    #navigationBar {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      width: 90%;
+    }
+    #navigationBar ul {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      list-style-type: none;
+      background-color: #eeeeee;
+      overflow: visible;
+    }
+    #navigationBar ul > li {
+      display: block;
+      float: left;
+      height: auto;
+      /* menu header's items width */
+      width: 120px;
+    }
+    #navigationBar li > a {
+      display: block;
+      padding: 0 0 0 10px;
+      height: 100%;
+      width: 109px;
+      border-right: 1px black solid;
+      line-height: 30px;
+      font-family: sans-serif;
+      font-size: 17px;
+      text-decoration: none;
+      background-color: #eeeeee;
+      color: #5d5636;
+    }
+    #navigationBar ul ul {
+      margin-top: 2px;
+      display: none;
+      position: static;
+      height: auto;
+      width: 160px;
+      border: 1px #666666 solid;
+      background-color: #dddddd;
+    }
+    #navigationBar ul ul li {
+      position: relative;
+      float: none;
+      display: block;
+      height: 28px;
+      width: 100%;
+      border: none;
+    }
+    #navigationBar ul ul li > a {
+      height: 100%;
+      width: 96%;
+      padding: 0 0 0 4%;
+      line-height: 28px;
+      background-color: transparent;
+      border: none;
+      color: #000000;
+      font-size: 12px;
+      font-style: normal;
+    }
+    #navigationBar li:hover > a {
+      color: #220000;
+      background-color: #eeeabe;
+    }
+    #navigationBar li:hover > ul {
+      display: block;
+    }
+/* Dddano */
+    #navigationBar ul ul ul {
+      left: 100%;
+      top: -10%;
+      display: none;
+      position: absolute;
+      height: auto;
+      width: 160px;
+      border: 1px #666666 solid;
+      background-color: #dddddd;
+    }
+    #navigationBar ul ul ul li {
+      position: relative;
+      float: none;
+      display: block;
+      height: 28px;
+      width: 100%;
+      border: none;
+    }
+    #navigationBar ul ul ul li > a {
+      height: 100%;
+      width: 96%;
+      padding: 0 0 0 4%;
+      line-height: 28px;
+      background-color: transparent;
+      border: none;
+      color: #000000;
+      font-size: 12px;
+      font-style: normal;
+    }
+    #navigationBar li li:hover > a {
+      color: #220000;
+      background-color: #eeeabe;
+    }
+    #navigationBar li li:hover > ul {
+      display: block;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Tipična stran</h1>
+    <nav id="navigationBar">
+      <ul>
+        <li><a href="/home.html">Home</a>
+          <ul>
+            <li><a href="/products/a.html">Something Awesome</a></li>
+          </ul>
+        </li>
+        <li><a href="/products.html">Products</a>
+          <ul>
+            <li><a href="/products/a.html">Something Awesome</a></li>
+            <li><a href="/products/b.html">Another Awesome Thing</a></li>
+            <li><a href="/products/c.html">Our Best Thing</a></li>
+            <li><a href="/products/d.html">A Cheap Thing</a></li>
+            <li><a href="/products/a.html">Something Awesome</a></li>
+            <li><a href="/products/a.html">Something Awesome</a></li>
+            <li><a href="/products/a.html">Something Awesome</a></li>
+          </ul>
+        </li>
+        <li><a href="/about.html">About</a>
+          <ul>
+            <li><a href="/history.html">History</a></li>
+            <li><a href="/team.html">The Team</a>
+            <ul>
+              <li><a href="#">Drugi podmeni</a></li>
+              <li><a href="#">Drugi podmeni</a></li>
+              <li><a href="#">Drugi podmeni</a></li>
+              <li><a href="#">Drugi podmeni</a></li>
+            </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p>Typical web site content.</p>
+  </body>
+</html>

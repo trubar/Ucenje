@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obrazci</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        fieldset {
+            border: none;
+            background-color: #aaa;
+             width: 400px;
+            }
+        legend {
+            text-align: right ;
+            }
+    </style>
+</head>
+<body>
+    <p>
+        <label>Enter your <a href="#">name</a>
+            <input type="text" name="username" tabindex="1">
+        </label>
+    </p>
+    <p>
+        <label>Enter your <a href="#">age</a>
+            <input type="text" name="age" tabindex="2">
+        </label>
+    </p>
+    <p>
+        <input type="submit" tabindex="3">
+    </p>
+    <br>
+    <br>
+    <p>What are your interests?</p>
+    <label>Sports <input type="checkbox" name="sports" accesskey="S"></label>
+    <label>Music <input type="checkbox" name="music" accesskey="M"></label>
+    <label>Television <input type="checkbox" name="tv" accesskey="T"></label>
+    <br>
+    <label for="question42">What is the meaning of life?</label>
+    <textarea id="question42" disabled>Enter you answer here.</textarea>
+</body>
+</html>

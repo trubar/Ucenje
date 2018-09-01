@@ -1,0 +1,217 @@
+body {
+    font-family: Optima, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:silver;
+    font-size: large;
+}
+#sitenav ol {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+#sitenav li {
+    display: inline;
+    margin-left: 1em;
+    border-left: 1px solid black;
+}
+#sitenav li:first-child {
+    margin-left: 0;
+    border-left: none;
+    margin-left: 0;
+}
+#sitenav li a {
+    color: white;
+}
+#main {
+    /* padding: 0 12em 2em 0em; */
+    /* padding: 0 2em 2em 12em; */
+    padding: 0 1em 2em 12em;
+    position: relative;
+    background-color: #CEBDAD;
+}
+#content {
+    background-color: white;
+}
+#sidebar {
+    position: absolute;
+    width: 10em;
+    /* right: 1em; */
+    left: 1em;
+    top: 1em;
+}
+#sidebar h3 {
+    color: white;
+    background-color: black;
+}
+#sidenbar ol {
+    margin: 0 0 1em 0;
+    background-color: white;
+    border: 2px solid black;
+}
+footer {
+    background-color: white;
+}
+/* moje dodano */
+#slika_glavna {
+    display: block;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* barve in fonti */
+a:link {
+    color: #055;
+}
+a:visited {
+    color: #404;
+}
+header {
+    text-align: center;
+    background-color:#3a2418;
+    color: white;
+}
+header h1, h2 {
+    margin: 0;
+}
+header h1 {
+    color: #ffff00;
+    font-size: 250%;
+}
+header h2 {
+    font-weight: normal;
+    font-style: italic;
+}
+#sitenav {
+    color: white;
+    background-color: #404;
+}
+#sitenav ol {
+    font-size: 90%;
+    text-align: center;
+}
+#sitenav li {
+    margin-left: 3em;
+    /*border-left: 1px solid #DDD;*/
+    border: none;
+}
+#sitenav  li a:link, #sitenav li a:visited {
+    color: white;
+    text-decoration: none;
+}
+#sitenav  li a:hover {
+    color: #DDDDDD;
+}
+#main {
+    background-color: rgb(226, 215, 173);
+}
+#content {
+    background-color: white;
+    padding: 1em 5em;
+}
+#content h3 {
+    margin-top: 0;
+    text-align: center;
+}
+#content p {
+    font-size: 90%;
+    line-height: 1.4;
+    text-align: justify;
+}
+#sidebar h3 {
+    font-size: 100%;
+    color: white;
+    margin: 0;
+    font-weight: normal;
+    padding: 0.125em 0.25em;
+    background-color: #404;
+}
+#sidebar ol {
+    background-color: white;
+    border: 2px solid #404;
+    border-top: 0;
+    margin: 0 0 1em 0;
+    padding: 0.125em 0.25em;
+}
+#sidebar li {
+    font-size: 85%;
+    display: block;
+    padding: 0.125em 0;
+}
+#sidebar li a:link, #sidebar li a:visited {
+    text-decoration: none;
+    color: #055;
+}
+#sidebar li a:hover {
+    color: #404;
+}
+footer {
+    background-color: #404;
+    color: white;
+    padding: 0.5em 5em;
+}
+footer p {
+    margin: 0em;
+    font-size: 75%;
+    text-align: center;
+}
+footer p a:link, footer p a:visited {
+    color: #DDDDDD;
+}
+/* premaknjen nav meni zgoraj */
+header {
+    padding: 1.25em 0 0.25em 0;
+    position: relative;
+    background-color: #3a2418;
+}
+#sitenav {
+ position: absolute;
+ top: 0; right: 0;
+ border-bottom: 1px solid #DDDDDD;
+ width: 100%;
+ background-color: #055;
+}
+/*
+footer {
+    position: absolute;
+    top: 1em; right: 1em;
+    width: 10em;
+    padding: 0;
+}
+*/
+/* dodatek iz float 15.5 */
+body {
+    margin: 0;
+    padding: 0;
+}
+#sitenav ol {
+    padding: 0; margin: 0;
+    display: inline;
+}
+#sitenav li {
+    display: inline; padding-left: 1em;
+    margin-left: 1em; 
+    border-left: 1px solid black;
+}
+#sitenav li:first-child {
+    padding-left: 0;
+    border-left: none;
+    margin-left: 0;
+}
+/* This is what positions the sidebar: 
+#main {
+    padding: 0 2em 2em 12 em;
+}
+#content {
+    float: left;
+}
+#sidebar {
+    float: left; width: 10em;
+    position: relative;
+    right: 1em; top: 1em;
+    margin-left: -100%;
+}
+#sidebar ol {
+    margin: 0 0 1em 0;
+}
+*/

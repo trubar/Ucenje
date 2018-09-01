@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obrazci</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <label>How much do you like our product?<br>
+        Not at all <input type="range" id="likes" min="0" max="5" value="4.3"> More
+        than anything
+    </label>
+    <br>
+    <label>When can you return the book?<br>
+        <input type="date" id="returndate">
+    </label>
+    <br>
+    <label>What is your favorite color?
+        <input type="color" id="favoritecolor">
+    </label>
+    <br>
+    <label>Search:
+        <input type="search" id="s">
+    </label>
+    <br>
+    <label for="userpassword">Enter your name</label>
+    <input type="password" name="" id="userpassword" size="8" maxlength="8">
+    <br>
+    <label>Check to receive SPAM email <input type="checkbox" id="spam" checked></label>
+    <br>
+    <p>Check all symptoms that you are experiencing:</p>
+    <label><input type="checkbox" name="symptoms" value="nausea"> Nausea</label>
+    <label><input type="checkbox" name="symptoms" value="lightheadedness"> Light-headedness</label>
+    <label><input type="checkbox" name="symptoms" value="fever"> Fever</label>
+    <label><input type="checkbox" name="symptoms" value="headache"> Headache</label>
+    <br>
+    <input type="button" id="verify" value="Preveri" onclick="verifydata()">
+</body>
+</html>

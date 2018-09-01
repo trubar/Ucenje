@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Roboto');
+html body {
+    font-family: PT Sans Narrow, Roboto, sans-serif;
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+div {
+    position: static;
+}
+#title {
+    margin-top: 15px;
+}
+#obrazec-zunaj {
+    margin-top: 15px;
+    width: 100%;
+}
+#description {
+    padding: 5px;
+}
+.oznake {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    text-align: right;
+}
+.vnosi {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+.chk_radio {
+    list-style-type: none;
+}
+.input-field {
+    height: 20px;
+    width: 200px;
+    border: 1px solid #c0c0c0;
+}
+input[type=checkbox] {
+    margin: 3px 3px 3px 4px;
+}
+input[type=radio] {
+    margin: 3px 3px 0px 5px;
+}
+#komentar {
+    height: 50px;
+    resize: vertical;
+}
+.vrstica {
+    margin-top: 5px;
+}
+#description {
+    font-size: 18px;
+}

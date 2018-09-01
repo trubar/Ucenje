@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Roboto');
+
+html, body {
+    font-family: PT Sans Narrow, Roboto, sans-serif;
+    text-align: center;
+    color: #999;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #D9D9D9;
+}
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    color: black;
+}
+nav ul {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    list-style-type: none;
+    text-align: right;
+    overflow: hidden;
+    background-color: #D9D9D9;
+}
+nav li {
+    display: inline-block;
+    margin: 0 40px;
+    text-align: center;
+    justify-content: center;
+}
+nav a {
+    font-size: 24px;
+}
+
+.uvod {
+    top: 0;
+    min-height: 55vh;
+    padding-top: 45vh;
+}
+.uvod p {
+    font-size: 16px;
+}
+.uvod h1 {
+    font-size: 42px;
+}
+.sluzbe_wrapper {
+    height: 100vh;
+    background-color: #ecf2f9;
+}
+.sluzbe_tekst {
+    padding-top: 10%;
+}
+.sluzbe {
+    display: inline-block;
+    overflow: hidden;
+
+}
+
+.project-tile {
+    margin: 15px;
+    padding: 50px;
+    border-radius: 50%;
+    border: #444 solid 1px;
+}
+.project-tile:hover {
+    border:red solid 1px;
+}
+#contact {
+    height: 100vh;
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+
+footer {
+    padding: 5px;
+    font-size: 8px;
+}
+@media only screen and (max-width: 600px) {
+    nav ul {
+        text-align: center;
+    }
+    nav li {
+        display: inline;
+        margin: 0 5px 0 5px;
+    }
+    nav a {
+        font-size: 20px;
+    }
+}
