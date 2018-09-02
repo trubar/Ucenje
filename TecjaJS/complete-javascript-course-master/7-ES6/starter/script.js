@@ -570,4 +570,4 @@ const park1 = new Park('Češminov park', 2010, 50, 6000);
 const park2 = new Park('Občinski park', 1856, 20, 2000);
 const park3 = new Park('Lipice', 1640, 110, 1500);
 
-const street1 = new Street('Trubarjeva', 1942, 230);
+const street1 = new Street('Trubarjeva', 1942, 230); //test
