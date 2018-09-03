@@ -29,10 +29,15 @@ leta = letnice.map((el, index) => { //želim več kot eno vrstico kode rabim {} 
 
 console.log(leta);*/
 
+
+
 /**
  * Arrow functions 2 del
  * 
  */
+
+
+
 
 //JS5
 /*
@@ -67,6 +72,7 @@ const box6 = {
 };
 box6.clickMe();
 */
+
 /*
 //JS6 dve arrow funkciji
 const box66 = {
@@ -113,11 +119,15 @@ Person.prototype.myFirends6 = function (firends) {
 new Person('Maja').myFirends6(firends);
 */
 
+
+
 /**
  *  
  *  Destructioning
  */
 /*
+
+
  // ES5
 
  var john = ['John', 26];
@@ -153,9 +163,15 @@ new Person('Maja').myFirends6(firends);
  console.log(retirement);
  */
 
+
+
 /**
  *              Arrays
  */
+
+
+
+
 /*
 const boxes = document.querySelectorAll('.box');
 
@@ -265,11 +281,14 @@ const all = [h, ...boxes];
 Array.from(all).forEach(cur => cur.style.color = 'white');
 */
 
+
 /**
  * 
  * ***  Rest parameters
  * 
  */
+
+
 
 /*
 // ES5
@@ -325,11 +344,15 @@ function isFullAge6(limit, ...years){
 isFullAge6(16, 1990, 1999, 1965, 2014);
 */
 
+
 /**
  * 
  *      Default parameters
  * 
  */
+
+
+
 /*
 // ES5
 function SmithPerson(firstName, yearOfBirth, lastName, nationality){
@@ -358,11 +381,15 @@ var john = new SmithPerson('John', 1990);
 var emily = new SmithPerson('Emily', 1987, 'Diaz', 'Spanish');
 */
 
+
 /**
  * 
  *      Maps
  * 
  */
+
+
+
 /*
 const question = new Map();
 question.set('question', 'Katero je uradno ime zadnje izdaje JavaSripta?');
@@ -540,6 +567,7 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 
 */
 
+// Naredim parke in ceste
 class TownElemnt {
     constructor(name, buildYear) {
         this.name = name;
@@ -554,8 +582,7 @@ class Park extends TownElemnt {
         this.area = area;
     }
     treeDensity() {
-        const density = (this.trees / this.area);
-        console.log(density);
+        return (this.trees / this.area);
     }
 };
 
@@ -566,8 +593,41 @@ class Street extends TownElemnt {
     }
 };
 
-const park1 = new Park('Češminov park', 2010, 50, 6000);
-const park2 = new Park('Občinski park', 1856, 20, 2000);
-const park3 = new Park('Lipice', 1640, 110, 1500);
+const park1 = new Park('Češminov', 2010, 50, 6);
+const park2 = new Park('Občinski', 1856, 20, 2);
+const park3 = new Park('Lipice', 1640, 110, 1.5);
 
-const street1 = new Street('Trubarjeva', 1942, 230); //test
+const street1 = new Street('Trubarjeva', 1942, 230);
+const street2 = new Street('Ljubljanska', 1852, 2000);
+const street3 = new Street('Krtina', 2014, 200);
+const street4 = new Street('Taborska', 1945, 150);
+
+console.log('----- POROČILO PARKI ----');
+
+let ages = [];
+const parks = [park1, park2, park3];
+parks.forEach(function (cur) {
+    console.log(`${cur.name} park ima gostoto dreves ${cur.treeDensity()} na km^2`);
+    ages.push(new Date().getFullYear() - cur.buildYear);
+});
+
+
+let sumAges = 0
+ages.forEach(function (cur) {
+    sumAges += cur;
+});
+
+console.log(`Povprečna starost parkov je ${sumAges / parks.length} let.`);
+
+
+parks.forEach(function (cur) {
+    if (cur.trees >= 100) {
+        console.log(`${cur.name} park ima več kot 100 dreves. Ima ${cur.trees} dreves.`);
+    }
+});
+
+//console.log(`Povprečna starost parkov je: ${avrAge}`);
+
+console.log('----- POROČILO ULICE ----');
+
+const streets = [street1, street2, street3, street4];
