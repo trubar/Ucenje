@@ -416,7 +416,7 @@ if (question.has(4)) {
 //For of loop
 
 for (let [key, value] of question.entries()) {
-    if (typeof(key)=== 'number') {
+    if (typeof(key) === 'number') {
         console.log(`Odgovor ${key}: ${value}`);
     }
 }
@@ -567,15 +567,18 @@ HINT: Use some of the ES6 features: classes, subclasses, template strings, defau
 
 */
 
+/////////////////////////////////**
+// Moj Izdelek
+/*
 // Naredim parke in ceste
-class TownElemnt {
+class Element {
     constructor(name, buildYear) {
         this.name = name;
         this.buildYear = buildYear;
     }
 };
 
-class Park extends TownElemnt {
+class Park extends Element {
     constructor(name, buildYear, trees, area) {
         super(name, buildYear);
         this.trees = trees;
@@ -586,33 +589,51 @@ class Park extends TownElemnt {
     }
 };
 
-class Street extends TownElemnt {
-    constructor(name, buildYear, stLength) {
+class Street extends Element {
+    constructor(name, buildYear, stLength = 250) {
         super(name, buildYear);
         this.stLength = stLength;
     }
+    sClass() {
+        if (this.stLength < 100) {
+            return 'mala';
+        } else if (this.stLength >= 100 && this.stLength < 200) {
+            return 'majhna';
+        } else if (this.stLength >= 200 && this.stLength < 300) {
+            return 'normalna';
+        } else if (this.stLength >= 300 && this.stLength < 500) {
+            return 'velika';
+        } else if (this.stLength > 500)
+            return 'ogromna';
+    }
 };
 
-const park1 = new Park('Češminov', 2010, 50, 6);
-const park2 = new Park('Občinski', 1856, 20, 2);
-const park3 = new Park('Lipice', 1640, 110, 1.5);
+const parks = [
+    new Park('Češminov', 2010, 50, 6),
+    new Park('Občinski', 1856, 20, 2),
+    new Park('Lipice', 1640, 110, 1.5)
+]
 
-const street1 = new Street('Trubarjeva', 1942, 230);
-const street2 = new Street('Ljubljanska', 1852, 2000);
-const street3 = new Street('Krtina', 2014, 200);
-const street4 = new Street('Taborska', 1945, 150);
+const streets = [
+    new Street('Trubarjeva', 1942, 90),
+    new Street('Ljubljanska', 1852, 2000),
+    new Street('Krtina', 2014, 200),
+    new Street('Taborska', 1945, 150),
+]
+
+//const street5 = new Street('Cesta', 1978)
 
 console.log('----- POROČILO PARKI ----');
 
 let ages = [];
-const parks = [park1, park2, park3];
+//const parks = [park1, park2, park3];
 parks.forEach(function (cur) {
     console.log(`${cur.name} park ima gostoto dreves ${cur.treeDensity()} na km^2`);
     ages.push(new Date().getFullYear() - cur.buildYear);
 });
 
 
-let sumAges = 0
+let sumAges = 0;
 ages.forEach(function (cur) {
     sumAges += cur;
 });
@@ -630,4 +651,95 @@ parks.forEach(function (cur) {
 
 console.log('----- POROČILO ULICE ----');
 
-const streets = [street1, street2, street3, street4];
+//const streets = [street1, street2, street3, street4];
+
+let sumStreetsLength = 0;
+streets.forEach(function (cur) {
+    sumStreetsLength += cur.stLength;
+});
+
+const avgStreetLenght = (sumStreetsLength / streets.length);
+
+console.log(`Dolžina naših ${streets.length} cest v mestu je ${sumStreetsLength} metrov. To je v povprečju ${avgStreetLenght} metrov.`);
+
+streets.forEach(function (cur) {
+    console.log(`${cur.name} cesta, zgrajena ${cur.buildYear}, je ${cur.sClass()} cesta.`)
+})
+*/
+
+
+class Element {
+    constructor(name, buildYear) {
+        this.name = name;
+        this.buildYear = buildYear;
+    }
+};
+
+class Park extends Element {
+    constructor(name, buildYear, trees, area) {
+        super(name, buildYear);
+        this.trees = trees;
+        this.area = area;
+    }
+    treeDensity() {
+        const density = (this.trees / this.area)
+        console.log(`${this.name} park ima gostoto dreves ${this.trees} na kvadratni km.`)
+    }
+};
+
+class Street extends Element {
+    constructor(name, buildYear, stLength, size) {
+        super(name, buildYear);
+        this.stLength = stLength;
+        this.size = size;
+    }
+    classStreet () {
+        const clasification = new Map();
+        clasification.set(1, 'mala');
+        clasification.set(2, 'majhna');
+        clasification.set(1, 'normalna');
+        clasification.set(1, 'velika');
+        clasification.set(1, 'ogromna');
+        //console.log(``)
+    }
+};
+
+const parks = [
+    new Park('Češminov', 2010, 50, 6),
+    new Park('Občinski', 1856, 20, 2),
+    new Park('Lipice', 1640, 110, 1.5)
+]
+
+const streets = [
+    new Street('Trubarjeva', 1942, 90, 1),
+    new Street('Ljubljanska', 1852, 2000, 2),
+    new Street('Krtina', 2014, 200),
+    new Street('Taborska', 1945, 150, 5),
+]
+
+function calc(arr) {
+    const sum = arr.reduce((previous, current) => previous + current, 0);
+    return [sum, sum / arr.length];
+}
+
+function reportParks(p) {
+
+    console.log('----- POROČILO PARKI -----')
+    // 1. Tree density of each park in the town (forumla: number of trees/park area)
+    p.forEach(element => element.treeDensity());
+    // 2. Average age of each town's park (forumla: sum of all ages/number of parks)
+    const avgAge = p.map(el => new Date().getFullYear - el.buildYear);
+    console.log(avgAge);
+    // 3. The name of the park that has more than 1000 trees
+
+};
+
+function reportStreets(s) {
+    // 4. Total and average length of the town's streets
+    
+    // 5. Size classification of all streets: tiny/small/normal/big/huge. If the size is unknown, the default is normal    
+    
+};
+
+reportParks(parks);
+reportStreets(streets);
