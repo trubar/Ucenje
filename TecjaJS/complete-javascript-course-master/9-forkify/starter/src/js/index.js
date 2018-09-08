@@ -1,5 +1,33 @@
-import str from './models/Search';
-//import {add as a, multiply as m, ID} from './views/searchView';
-import * as searchView from './views/searchView';
+import Search from './models/Search';
 
-console.log(`Using imported functions! ${searchView.add(searchView.ID, 2)} and ${searchView.multiply(3, 5)}. ${str}.`)
+/**
+ * Global stanje aplikacije
+ * - Search object
+ * - Current recpie object
+ * - Shoping list object
+ * - liked object
+ */
+const state = {};
+
+const controlSearch = async () => {
+  // 1. Get query from the view
+  const query = 'pizza' //TODO
+  
+  if (query){
+    // 2. New search object and add ta state
+    state.search = new Search(query);
+
+    // 3. Prepare UI for results
+
+    // 4. Search for recipies
+    await state.search.getResults(); // ker je await moram zgoraj funkcijo narediti async
+
+    // 5. Render results on UI
+    console.log(state.search.result)
+  }
+}
+
+document.querySelector('.search').addEventListener('submit', e => {
+  e.preventDefault();
+  controlSearch();
+});
