@@ -1,6 +1,6 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements } from './views/base';
+import { elements, renderLoader, clearLoader } from './views/base';
 
 /**
  * Global stanje aplikacije
@@ -22,11 +22,14 @@ const controlSearch = async () => {
     // 3. Prepare UI for results
     searchView.clearInput();
     searchView.clearResults();
+    renderLoader(elements.searchRes);
+
 
     // 4. Search for recipies
     await state.search.getResults(); // ker je await moram zgoraj funkcijo narediti async
 
     // 5. Render results on UI
+    clearLoader();
     searchView.renderResults(state.search.result);
   }
 }
