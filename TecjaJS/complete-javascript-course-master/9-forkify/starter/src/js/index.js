@@ -40,7 +40,7 @@ const controlSearch = async () => {
       clearLoader();
       searchView.renderResults(state.search.result);
     } catch (err) {
-      alert('Nekaj ne dela :)');
+      alert('Nekaj je narobe iz iskanjem... Verjetno je limit...');
       clearLoader();
     }
   }
@@ -64,6 +64,7 @@ elements.searchResPages.addEventListener('click', e => {
  * RECIPE CONTROLER
  */
 const controlRecipe = async () => {
+  // Dobim ID iz url
   const id = window.location.hash.replace('#', '');
   console.log(id);
 
@@ -76,15 +77,17 @@ const controlRecipe = async () => {
     try {
       // Pridobi podatke recepta in uredi sestavine
       await state.recipe.getRecipe();
-      state.recipe.parseIngridients();
+      state.recipe.parseIngredients();
   
       // Preračunaj čas in število postrežb
-      state.calcTime()
+      state.recipe.calcTime();
+      state.recipe.calcServings();
   
       // Izpiši recept
       console.log(state.recipe);
     } catch (err) {
-      alert('Ne morem izpisati recepta brez podatkov!')
+      console.log(err);
+      alert('Ne morem izpisati recepta brez podatkov!');
     }
   }
 }

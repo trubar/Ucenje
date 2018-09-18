@@ -20,7 +20,7 @@ export default class Recipe {
       // console.log(res); 
     } catch (error) {
       console.log(error);
-      alert('Nekaj je šlo narobe :(')
+      alert('Nekaj je šlo narobe :(');
     }
   };
 
@@ -35,61 +35,65 @@ export default class Recipe {
     this.servings = 4;
   };
 
-  parseIngridients() {
+  parseIngredients() {
     const unitsLong = ['tablespoons', 'tablespoon', 'ounces', 'ounce', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
     const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
+    const units = [...unitsShort, 'kg', 'g'];
 
-    const newIngridients = this.ingredients.map(el => {
-      // 1. enote na skupni imenovalec
-      let ingredient = el.toLowerCase();
-      unitsLong.forEach((unit, i) => {
-        ingredient = ingredient.replace(unit, unitsShort[i]);
-      });
+    const newIngredients = this.ingredients.map(el => {
+        // 1. enote na skupni imenovalec
+        let ingredient = el.toLowerCase();
+        unitsLong.forEach((unit, i) => {
+            ingredient = ingredient.replace(unit, unitsShort[i]);
+        });
 
-      // 2. Odstrani oklepaje (poguglaj)
-      ingredient = ingredient.replace(/ *\([^)]*\) */g, ' ');
+        // 2. Odstrani oklepaje (poguglaj)
+        ingredient = ingredient.replace(/ *\([^)]*\) */g, ' ');
 
-      // 3. Razdeli sestavine v število, enoto mere in sestavino (3 cup diced fresh red, yellow and green bell peppers -> 3, cup, diced ...)
-      const arrIng = ingredient.split(' ');
-      const unitIndex = arrIng.findIndex(el2 => unitsShort.includes(el2));
+        // 3. Razdeli sestavine v število, enoto mere in sestavino (3 cup diced fresh red, yellow and green bell peppers -> 3, cup, diced ...)
+        const arrIng = ingredient.split(' ');
+        const unitIndex = arrIng.findIndex(el2 => units.includes(el2));
 
-      let objIng;
-      if (unitIndex > -1) {
-        // Pomemeni da obstaja enota mere
-        // primer: 4 1/2 cups, arrCount je [4, 1/2] --> eval("4+1/2") --> 4.5
-        // primer: 4 cups, arrCOunt [4]
-        const arrCount = arrIng.slice(0, unitIndex);
-        let count;
-        if (arrCount === 1){
-          count = eval(arrIng[0].replace('-', '+')); // .replace ('-' with '+') zato da lahko pretvorim 4-1/2 v 4.5
-        } else {
-          count = eval(arrIng.slice(0, unitIndex).join('+')); // razlaga zgoraj
+        let objIng;
+        if (unitIndex > -1) {
+            // Pomemeni da obstaja enota mere
+            // primer: 4 1/2 cups, arrCount je [4, 1/2] --> eval("4+1/2") --> 4.5
+            // primer: 4 cups, arrCOunt [4]
+            const arrCount = arrIng.slice(0, unitIndex);
+            
+            let count;
+            if (arrCount.length === 1) {
+                count = eval(arrIng[0].replace('-', '+')); // .replace ('-' with '+') zato da lahko pretvorim 4-1/2 v 4.5
+            } else {
+                count = eval(arrIng.slice(0, unitIndex).join('+')); // razlaga zgoraj
+            }
+
+            objIng = {
+                count,
+                unit: arrIng[unitIndex],
+                ingredient: arrIng.slice(unitIndex + 1).join(' ')
+            };
+
+        } else if (parseInt(arrIng[0], 10)) {
+            // Ni enote mere, ampak prvi element je število npr: one bread
+            objIng = {
+                count: parseInt(arrIng[0], 10),
+                unit: '',
+                ingredient: arrIng.slice(1).join(' ')
+            }
+        } else if (unitIndex === -1) {
+            // Ni enote mere in ni števila na prvi poziciji
+            objIng = {
+                count: 1,
+                unit: '',
+                ingredient
+            }
         }
 
-        objIng = {
-          count,
-          unit: arrIng[unitIndex],
-          ingredient: arrIng(unitIndex +1).join(' ')
-        };
-
-      } else if (parseInt(arrIng[0], 10)) {
-        // Ni enote mere, ampak prvi element je število npr: one bread
-        objIng = {
-          count: parseInt(arrIng[0], 10),
-          unit: '',
-          ingredient: arrIng.slice(1).join(' ') // Če ni drugega argumenta vzame vse do konca arreya
-        }
-      } else if (unitIndex === -1) {
-        // Ni enote mere in ni števila na prvi poziciji
-        objIng = {
-          count: 1,
-          unit: '',
-          ingredient
-        }
-      }
-
-      return objIng;
+        return objIng;
     });
-    this.ingredients = newIngridients;
-  };
+    this.ingredients = newIngredients;
+}
+
+  
 };
