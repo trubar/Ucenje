@@ -1,6 +1,7 @@
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
+import * as recipeView from './views/recipeView';
 import {
   elements,
   renderLoader,
@@ -70,6 +71,8 @@ const controlRecipe = async () => {
 
   if (id) {
     // Pripravi UI na spremembe
+    recipeView.clearRecipe();
+    renderLoader(elements.recipe);
 
     // Ustvari objekt recept
     state.recipe = new Recipe(id); //id dobim zgoraj iz url, nato ustvarim objekt iz Recipe.js
@@ -84,7 +87,10 @@ const controlRecipe = async () => {
       state.recipe.calcServings();
   
       // Izpiši recept
-      console.log(state.recipe);
+      clearLoader();
+      recipeView.renderRecipe(state.recipe);
+
+
     } catch (err) {
       console.log(err);
       alert('Ne morem izpisati recepta brez podatkov!');
