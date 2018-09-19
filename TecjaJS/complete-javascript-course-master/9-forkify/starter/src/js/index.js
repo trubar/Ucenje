@@ -74,6 +74,9 @@ const controlRecipe = async () => {
     recipeView.clearRecipe();
     renderLoader(elements.recipe);
 
+    // Osvetli izbrani recept
+    if (state.search) searchView.highlightSelected(id);
+
     // Ustvari objekt recept
     state.recipe = new Recipe(id); //id dobim zgoraj iz url, nato ustvarim objekt iz Recipe.js
     
