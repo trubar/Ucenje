@@ -695,6 +695,19 @@ function init() {
 init();
 */
 
-let firstName = 'Andraž';
+// let firstName = 'Andraž';
 
-console.log(`To pa je naš ${firstName}.`)
+// console.log(`To pa je naš ${firstName}.`)
+
+
+function findNextSquare(sq) {
+    // Return the next square if sq if a perfect square, -1 otherwise
+    let num;
+    if (Number.isInteger(Math.sqrt(sq))) {
+      num = Math.sqrt(sq) + 1;
+      num *= num;
+      return num;
+    } else {
+    return -1;
+    }
+  }

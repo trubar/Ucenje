@@ -1,0 +1,14 @@
+.container {
+  border: dashed 2px red;
+  display: flex;
+  justify-content: center;
+}
+
+.container div {
+    background: #373142;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}

@@ -36,7 +36,7 @@ const controlSearch = async () => {
     try {
       // 4. Search for recipies
       await state.search.getResults(); // ker je await moram zgoraj funkcijo narediti async
-  
+
       // 5. Render results on UI
       clearLoader();
       searchView.renderResults(state.search.result);
@@ -79,16 +79,16 @@ const controlRecipe = async () => {
 
     // Ustvari objekt recept
     state.recipe = new Recipe(id); //id dobim zgoraj iz url, nato ustvarim objekt iz Recipe.js
-    
+
     try {
       // Pridobi podatke recepta in uredi sestavine
       await state.recipe.getRecipe();
       state.recipe.parseIngredients();
-  
+
       // Preračunaj čas in število postrežb
       state.recipe.calcTime();
       state.recipe.calcServings();
-  
+
       // Izpiši recept
       clearLoader();
       recipeView.renderRecipe(state.recipe);
@@ -104,3 +104,19 @@ const controlRecipe = async () => {
 /* window.addEventListener('hashchange', controlRecipe);
 window.addEventListener('load', controlRecipe); */
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
+
+// upravljanje iz kliki gumbov za recep
+elements.recipe.addEventListener('click', e => {
+  if (e.target.matches('.btn-dec, .btn-dec *')) {
+    // btn-dec gumb je bil kliknen
+    if (state.recipe.servings > 1) {
+      state.recipe.updateServings('dec');
+      recipeView.updateServingsIngredients(state.recipe);
+    }
+  } else if (e.target.matches('.btn-inc, .btn-inc *')) {
+    // btn-inc gumb je bil kliknen
+    state.recipe.updateServings('inc')
+    recipeView.updateServingsIngredients(state.recipe);
+  }
+  console.log(state.recipe);
+});
