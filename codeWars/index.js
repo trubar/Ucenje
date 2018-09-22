@@ -14,7 +14,7 @@
 
 //  
 
-
+var sum = [];
 var a = 89
 var b = a.toString().split('').map(e => {
   return parseInt(e);
@@ -25,9 +25,11 @@ console.log(b);
 var calc = 0;
 for (i = 0; i < b.length; i++) {
   calc += Math.pow(b[i], i + 1);
+  if (a===calc) {
+    sum.push(calc);
+  }
 }
 
-if (a===calc) {
-  
-}
+
 console.log(calc);
+console.log(sum);
