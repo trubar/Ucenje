@@ -12,24 +12,33 @@
 
 // Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
 
-//  
+// function sumDigPow(a, b) {
+//   // Your code here
+//   var sum = [];
+  
+//   for (i = a; i < b; i++) {
+//     var x = i.toString().split('').map(e => {
+//       return parseInt(e);
+//     });
+//     var calc = 0;
+//     x.forEach((el, i) => {
+//       calc += (Math.pow(el, i + 1));
+//     })
+//     y = x.join('');
+//     if (i === calc) {
+//       sum.push(calc)
+//     }        
+//       }
+//       return sum;
+//     }
 
-var sum = [];
-var a = 89
-var b = a.toString().split('').map(e => {
-  return parseInt(e);
-});
+// sumDigPow(1, 10);
 
-console.log(b);
+// Find The Parity Outlier
 
-var calc = 0;
-for (i = 0; i < b.length; i++) {
-  calc += Math.pow(b[i], i + 1);
-  if (a===calc) {
-    sum.push(calc);
-  }
+x = [2, 4, 0, 100, 4, 11, 2602, 36]
+x.forEach(e => {
+  isEven = e % 2 === 0;
+  isOdd = Math.abs(e % 2) === 1;
 }
-
-
-console.log(calc);
-console.log(sum);
+console.log(isEven, isOdd);
