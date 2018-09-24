@@ -3,6 +3,7 @@ import Recipe from './models/Recipe';
 import List from './models/List';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
+import * as listView from './views/listView';
 import {
   elements,
   renderLoader,
@@ -17,6 +18,7 @@ import {
  * - liked object
  */
 const state = {};
+window.state = state;
 
 /**
  *  SEARCH CONTROLER
@@ -106,6 +108,40 @@ const controlRecipe = async () => {
 window.addEventListener('load', controlRecipe); */
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
+/**
+ * LIST CONTROLLER
+ */
+
+const controlList = () => {
+  // če se ni seznama ga ustvari
+  if (!state.list) state.list = new List();
+
+  // dodaj sestavine iz recepte in UI
+  state.recipe.ingredients.forEach(el => {
+    const item = state.list.addItem(el.count, el.unit, el.ingredient);
+    listView.renderItem(item);
+  });
+};
+
+// Upravljaj iz posodabljanjem in brisanjem posameznih sestavin
+elements.shopping.addEventListener('click', e => {
+  const id = e.target.closest('.shopping__item').dataset.itemid;  //.dataset.itemid pride iz listView vrstica 5 (...data-itemid=${item.id})
+
+  // gumb delete
+  if(e.target.matches('.shopping__delete, .shopping__delete *')) {
+    // izbrišem iz state
+    state.list.deleteItem(id);
+
+    // izbrišem iz UI
+    listView.deleteItem(id);
+
+    // uredi še count sestavine
+  } else if (e.target.matches('.shopping__count-value')) { // dadaj še da ne more iti v -1...
+    const val = parseFloat(e.target.value, 10);
+    state.list.updateCount(id, val);
+  }
+});
+
 // upravljanje iz kliki gumbov za recep
 elements.recipe.addEventListener('click', e => {
   if (e.target.matches('.btn-dec, .btn-dec *')) {
@@ -118,6 +154,8 @@ elements.recipe.addEventListener('click', e => {
     // btn-inc gumb je bil kliknen
     state.recipe.updateServings('inc')
     recipeView.updateServingsIngredients(state.recipe);
+  } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')) {
+    controlList();
   }
 });
 
