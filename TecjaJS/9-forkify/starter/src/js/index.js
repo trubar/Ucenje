@@ -1,14 +1,17 @@
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import List from './models/List';
+import Likes from './models/Likes';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
+// import * as likesView from './views/likesView';
 import {
   elements,
   renderLoader,
   clearLoader
 } from './views/base';
+import Likes from './models/Likes';
 
 /**
  * Global stanje aplikacije
@@ -142,6 +145,40 @@ elements.shopping.addEventListener('click', e => {
   }
 });
 
+/**
+ * LIKE CONTROLER
+ */
+const controlLike = () => {
+  if (!state.likes) state.likes = new Likes();
+  const currentID = state.recipe.id;
+
+  // Uporabnik še NI všečkal trenutnega recepta (večja vrejetnost)
+  if(!state.likes.isLiked(currentID)) {
+    // Dodaj like v state
+    const newLike = state.likes.addLike(
+      currentID,
+      state.recipe.title,
+      state.recipe.author,
+      state.recipe.img
+    )
+    // Pritisni like gumb
+
+    // Dodaj like v UI
+    console.log(state.likes);
+
+  // Uporabnik JE že všečkal trenutnega recepta
+  } else {
+    // Odstrani like iz state
+    state.likes.deleteLike(currentID);
+    // Ugasni like gumb
+
+    // Odstrani like v UI
+    console.log(state.likes)
+
+  }
+};
+
+
 // upravljanje iz kliki gumbov za recep
 elements.recipe.addEventListener('click', e => {
   if (e.target.matches('.btn-dec, .btn-dec *')) {
@@ -155,7 +192,11 @@ elements.recipe.addEventListener('click', e => {
     state.recipe.updateServings('inc')
     recipeView.updateServingsIngredients(state.recipe);
   } else if (e.target.matches('.recipe__btn--add, .recipe__btn--add *')) {
+    // dodaj sestavine na napkupovalni seznam
     controlList();
+  } else if (e.target.matches('.recipe__love, .recipe__love *')) {
+    // like kontroler
+    controlLike();
   }
 });
 
