@@ -16,7 +16,7 @@ export const highlightSelected = id => {
     resultsArr.forEach(el => {
         el.classList.remove('results__link--active');
     });
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+    document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
 };
 
 // 'pasta with tomato and spinach'
@@ -27,7 +27,7 @@ export const highlightSelected = id => {
  * previous: 15 / previous + current.length = 18 / newTitle = ['pasta', 'with', 'tomato', 'and']
  * previous: 18 / previous + current.length = 18 / newTitle = ['pasta', 'with', 'tomato', 'and', 'spinach']
  */
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
     const newTitle = [];
     if (title.length > limit) {
         title.split(' ').reduce((previous, current) => {

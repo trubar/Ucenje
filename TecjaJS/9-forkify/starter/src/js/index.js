@@ -5,13 +5,12 @@ import Likes from './models/Likes';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
-// import * as likesView from './views/likesView';
+import * as likesView from './views/likesView';
 import {
   elements,
   renderLoader,
   clearLoader
 } from './views/base';
-import Likes from './models/Likes';
 
 /**
  * Global stanje aplikacije
@@ -97,7 +96,10 @@ const controlRecipe = async () => {
 
       // Izpiši recept
       clearLoader();
-      recipeView.renderRecipe(state.recipe);
+      recipeView.renderRecipe(
+        state.recipe,
+        state.likes.isLiked(id)
+        );
 
 
     } catch (err) {
@@ -148,6 +150,11 @@ elements.shopping.addEventListener('click', e => {
 /**
  * LIKE CONTROLER
  */
+
+// TESTING
+state.likes = new Likes();
+likesView.toggleLikeMenu(state.likes.getNumLikes())
+
 const controlLike = () => {
   if (!state.likes) state.likes = new Likes();
   const currentID = state.recipe.id;
@@ -162,20 +169,22 @@ const controlLike = () => {
       state.recipe.img
     )
     // Pritisni like gumb
+    likesView.toggleLikeBtn(true);
 
     // Dodaj like v UI
-    console.log(state.likes);
+    likesView.renderLike(newLike);
 
   // Uporabnik JE že všečkal trenutnega recepta
   } else {
     // Odstrani like iz state
     state.likes.deleteLike(currentID);
     // Ugasni like gumb
+    likesView.toggleLikeBtn(false);
 
     // Odstrani like v UI
-    console.log(state.likes)
 
   }
+  likesView.toggleLikeMenu(state.likes.getNumLikes())
 };
 
 

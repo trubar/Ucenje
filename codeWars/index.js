@@ -75,21 +75,43 @@
 // number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]);
 // console.log(sum);
 
-sumAll([1, 4]);
+// sumAll([1, 4]);
 
-function sumAll(arr) {
-    let sum = 0;
-    if (arr[0] < arr[1]) {
-        arr.forEach(el => {
+// function sumAll(arr) {
+//     let sum = 0;
+//     if (arr[0] < arr[1]) {
+//         arr.forEach(el => {
             
-        });
-        } else if (arr[1] < arr[0]) {
-            for (i = arr[1]; i <= arr[0]; i++) {
-                sum += i;
-                console.log(sum)
-        }
-}
+//         });
+//         } else if (arr[1] < arr[0]) {
+//             for (i = arr[1]; i <= arr[0]; i++) {
+//                 sum += i;
+//                 console.log(sum)
+//         }
+// }
 
-return sum;
-}
+// return sum;
+// }
 
+let myNestedArray = [
+    // change code below this line
+    ['unshift', false, 1, 2, 3, 'complex', 'nested'],['loop', 'shift', 6, 7, 1000, 'method']
+    [
+      [
+        ['concat', false, true, 'spread', 'array']
+      ],
+      [
+        [
+          ['mutate', 1327.98, 'splice', 'slice', 'push']
+            
+              ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']]]]
+    // change code above this line
+  ];
+  console.log(myNestedArray);
+
+
+  let nestedArray = [
+                    ['deep'],
+                    [['deeper'], ['deeper']],
+                    [[['deepest'], ['deepest']],[[['deepest-est?']]]]
+                    ];

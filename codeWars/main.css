@@ -1,14 +1,15 @@
-.container {
-  border: dashed 2px red;
-  display: flex;
-  justify-content: center;
+html, body {
+  background:url('./img/bg.jpeg') center center no-repeat;
+  height: 100%;
+  background-size:cover;
 }
-
-.container div {
-    background: #373142;
-    color: #fff;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
+#logo img {
+  margin:0 auto !important;
+  padding-top:20px;
+}
+#intro p {
+  color: white;
+  text-align:center;
+  font-family: 'Kalam', cursive;
+  font-size:1.8em;
 }
