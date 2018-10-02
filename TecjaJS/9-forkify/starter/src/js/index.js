@@ -16,7 +16,7 @@ import { elements, renderLoader, clearLoader } from "./views/base";
  * - liked object
  */
 const state = {};
-window.state = state;
+// window.state = state;
 
 /**
  *  SEARCH CONTROLER
@@ -68,7 +68,7 @@ elements.searchResPages.addEventListener("click", e => {
 const controlRecipe = async () => {
   // Dobim ID iz url
   const id = window.location.hash.replace("#", "");
-  console.log(id);
+  // console.log(id);
 
   if (id) {
     // Pripravi UI na spremembe
@@ -212,4 +212,4 @@ elements.recipe.addEventListener("click", e => {
   }
 });
 
-window.l = new List();
+// window.l = new List();
