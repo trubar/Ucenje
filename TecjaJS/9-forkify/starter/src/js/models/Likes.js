@@ -11,12 +11,18 @@ export default class Likes {
       img
     };
     this.likes.push(like);
+
+    // pošljem podatke v lokalno shrambo
+    this.persistData();
     return like;
   }
 
   deleteLike(id) {
     const index = this.likes.findIndex(el => el.id === id);
     this.likes.splice(index, 1);
+
+    // Odstranim lokalno skranjeme podatke
+    this.persistData();
   }
 
   isLiked(id) {
@@ -25,5 +31,16 @@ export default class Likes {
 
   getNumLikes() {
     return this.likes.length;
+  }
+
+  persistData() {
+    localStorage.setItem("likes", JSON.stringify(this.likes));
+  }
+
+  readStorage() {
+    const storage = JSON.parse(localStorage.getItem("likes"));
+
+    // ponovno shranim podatke is lokalnega spomina
+    if (storage) this.likes = storage;
   }
 }

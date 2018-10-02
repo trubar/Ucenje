@@ -1,4 +1,4 @@
-import uniqid from 'uniqid';
+import uniqid from "uniqid";
 
 export default class List {
   constructor() {
@@ -11,7 +11,7 @@ export default class List {
       count,
       unit,
       ingredient
-    }
+    };
     this.items.push(item);
     return item;
   }
