@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Moderni portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch scss/ --output dist/css/ --recursive"
+  },
+  "author": "Andraž Bečaj",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
